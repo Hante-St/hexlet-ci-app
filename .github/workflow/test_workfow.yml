@@ -1,0 +1,16 @@
+name: test_workflow
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Установка зависимостей
+        run: make setup
+
+
+      - name: Запуск линтера
+        run: make lint
+
+
+      - name: Запуск тестов
+        run: make test
